@@ -3,6 +3,7 @@ import morgan from "morgan";
 import productoRouter from './routes/producto.route';
 import usuarioRouter from './routes/usuario.route';
 import categoriaRouter from './routes/categoria.route';
+import rolRouter from './routes/rol.route';
 import { AppDataSource } from './config/db.config';
 
 const app: Application = express();
@@ -18,7 +19,7 @@ app.use(morgan('dev'));
 app.use('/api/v1/productos',productoRouter);
 app.use('/api/v1/usuarios',usuarioRouter);
 app.use('/api/v1/categorias',categoriaRouter);
-
+app.use('/api/v1/roles',rolRouter);
 
 export const startServer = async () => {
     try {
